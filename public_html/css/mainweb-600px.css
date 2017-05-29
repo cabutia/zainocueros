@@ -1,0 +1,19 @@
+@media only screen and (min-width: 601px) {
+
+  #main-head-logo
+  {
+    max-width: 100%;
+    width: auto;
+  }
+
+  .wip-background
+  {
+    position: fixed;
+    top: 0;
+    /*left: calc(50% - 500px);*/
+    background-position: cover;
+    width: auto;
+    height: 100%;
+    z-index: -1;
+  }
+}

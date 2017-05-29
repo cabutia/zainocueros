@@ -1,0 +1,15 @@
+@media only screen and (min-width: 993px) {
+
+  .wip-background
+  {
+    left: 0;
+    height: auto;
+    width: 100%;
+  }
+
+  #main-head-logo
+  {
+    max-width: 100%;
+    width: auto;
+  }
+}

@@ -1,0 +1,18 @@
+html, body
+{
+  /*background-color: black;*/
+}
+
+.wip-background
+{
+  position: fixed;
+  top: 0;
+  /*left: calc(50% - 500px);*/
+  background-size: cover;
+  z-index: -1;
+}
+
+#main-head-logo
+{
+  width: 100%;
+}
