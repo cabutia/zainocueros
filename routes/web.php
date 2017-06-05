@@ -11,8 +11,4 @@
 |
 */
 
-Route::get('/', function () {
-    return view('home.index');
-});
-
-Route::post('/api/consulta/send', 'ConsultaController@send')->name("consulta.send");
+Route::get('/', 'PagesController@home')->name('home');

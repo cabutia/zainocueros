@@ -1,3 +1,6 @@
 @media only screen and (min-width: 601px) {
-
+  .who-we-are-text
+  {
+    text-align: center;
+  }
 }

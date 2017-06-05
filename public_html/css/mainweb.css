@@ -1,0 +1,161 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.bdb
+{
+  border: 1px solid red;
+}
+
+.header-img-container
+{
+  overflow: hidden;
+}
+
+.header-img
+{
+  height: 100vh;
+}
+
+.abs-logo-wrapper
+{
+  width: 100%;
+  height: 100vh;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.relative{ position: relative; } .no-margin{ margin: 0; }
+
+.big-nav
+{
+  position: absolute;
+  top: calc(100% - 64px);
+  background: transparent;
+  box-shadow: none;
+  z-index: 100000;
+}
+
+.big-nav ul li:hover
+{
+  background: rgba(140, 90, 90, 0.3);
+}
+
+.who-we-are-text
+{
+  line-height: 1.4;
+  color: #666;
+  letter-spacing: .05em;
+}
+
+.less-padding
+{
+  padding: 0 4px !important;
+}
+
+.text-when-hover
+{
+  position: absolute;
+  height: calc(100% - 6px);
+  width: calc(100% - 8px);
+  top: 0px;
+  left: 4px;
+  background-color: rgba(0,0,0,0);
+  color: white;
+  display: none;
+}
+
+.text-when-hover h3
+{
+  width: 100%;
+  text-align: center;
+  font-family: 'bebas_neue_bold';
+  letter-spacing: 1px;
+}
+
+.hoverable-for-text:hover > .text-when-hover
+{
+  display: flex;
+  animation: transToSemiBlack .4s 1 forwards;
+}
+
+.hoverable-for-text:hover > .see-more-4box
+{
+  display: none;
+}
+
+.sm-text-when-hover
+{
+  position: absolute;
+  height: calc(100% - 6px);
+  width: calc(100% - 8px);
+  top: 0px;
+  left: 4px;
+  background-color: rgba(90,12,12,.2);
+  color: white;
+  display: flex;
+}
+
+.sm-text-when-hover h4
+{
+  width: 100%;
+  text-align: center;
+  font-family: 'bebas_neue_bold';
+  letter-spacing: 1px;
+  text-shadow: 0px 1px 2px rgba(0,0,0,.4);
+}
+
+.see-more-4box
+{
+  position: absolute;
+  bottom: 6px;
+  left: 4px;
+  z-index: 2;
+
+  width: calc(100% - 8px);
+  background: rgba(10,10,10,.5);
+  color: white;
+  letter-spacing: 1px;
+}
+
+.mobile-nav
+{
+  position: fixed;
+  top: 0;
+  background: transparent;
+  z-index: 100000;
+  box-shadow: 0px 0px 0px transparent;
+}
+
+.mobile-nav-logo
+{
+  height: 30px;
+  margin-top: 15px;
+  margin-left: 10px;
+  opacity: 0;
+}
+
+.border-btn{
+  background: transparent;
+  color: #666;
+  border: 1px solid #d0d0d0;
+  border-radius: 100px;
+}
+
+.shopping-badge
+{
+  background: red;
+  color: white !important;
+  padding: 0 2px !important;
+  border-radius: 3px;
+}
+
+#floating-btn
+{
+  display: none;
+  opacity: 0;
+  z-index: 100000;
+}

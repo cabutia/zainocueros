@@ -1,0 +1,10 @@
+/*Animations page*/
+
+@keyframes transToSemiBlack {
+  from {
+    background: rgba(0,0,0,0);
+  }
+  to {
+    background: rgba(0,0,0,.5);
+  }
+}

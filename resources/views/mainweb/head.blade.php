@@ -4,12 +4,16 @@
 
   {{-- CDN & scripts --}}
   <link href="https://fonts.googleapis.com/css?family=Raleway:100,600" rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   {!! MaterializeCSS::include_full() !!}
 
   {{-- Estilos de la pagina --}}
   <link rel="stylesheet" href="{{ asset('css/mainweb.css') }}">
   <link rel="stylesheet" href="{{ asset('css/mainweb-600px.css') }}">
   <link rel="stylesheet" href="{{ asset('css/mainweb-990px.css') }}">
+  <link rel="stylesheet" href="{{ asset('css/animations.css') }}">
+  <link rel="stylesheet" href="{{ asset('fonts/stylesheet.css') }}">
+
 
   {{-- Estilos que modifican MaterializeCSS --}}
   <link rel="stylesheet" href="{{ asset('css/materialize-modify.css') }}">

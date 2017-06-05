@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   @include('mainweb.head')
-  <body>
+  <body style="height: 4000px">
     @yield('content')
     @include('mainweb.pageScripts')
   </body>
