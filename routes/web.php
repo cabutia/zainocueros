@@ -12,3 +12,4 @@
 */
 
 Route::get('/', 'PagesController@home')->name('home');
+Route::get('/store', 'PagesController@products')->name('products');

@@ -1,0 +1,26 @@
+<nav class="mobile-nav hide-on-large-only" id="mobile-nav">
+  <a href="#" data-activates="slide-out" class="button-collapse right"><i class="material-icons">menu</i></a>
+  <a href="#" class="left"><img src="{{ asset('images/zaino-only-white-logo.png') }}" class="mobile-nav-logo"></a>
+  <ul class="side-nav" id="slide-out">
+    <li><a href="#"><i class="material-icons">airplay</i>Inicio
+    </a></li>
+    <li><a href="#"><i class="material-icons">supervisor_account</i>Quienes somos
+    </a></li>
+    <li><a href="{{ route('products') }}"><i class="material-icons">work</i>Productos
+    </a></li>
+    <li><a href="#"><i class="material-icons">contact_phone</i>Contacto
+    </a></li>
+    <li><a href="#"><i class="material-icons">person_pin</i>Social
+    </a></li>
+
+    <li><a href="#"><i class="material-icons">shopping_cart</i>Carrito
+      <span class="deep-orange badge new right" data-badge-caption="">0</span>
+    </a></li>
+    <div class="divider"></div>
+
+    <div class="col s12 center">
+      <button type="button" class="center btn border-btn z-depth-0">Iniciar sesión</button>
+      <button type="button" class="center btn border-btn z-depth-0">Registrate</button>
+    </div>
+  </ul>
+</nav>

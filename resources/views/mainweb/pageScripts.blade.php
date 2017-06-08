@@ -12,7 +12,7 @@
   // Variables
   var desktopNav = $('#desktop-nav'),
       desktopNavTrans = 1;
-  var floatingCart = $('#floating-btn'),
+  var floatingCart = $('.cs-absolute-shopping'),
       floatingCartTrans = 1;
   var mobileNav = $('#mobile-nav'),
       mobileNavTrans = 1,
@@ -27,6 +27,7 @@
    **/
 
    $('.button-collapse').sideNav();
+   $('.parallax').parallax();
 
 
 
@@ -71,6 +72,7 @@
     }
 
     /* Shopping cart */
+    // Temporally disabled
     if($(this).scrollTop() > 0 && floatingCartTrans == 1){
       floatingCart.css({ "display" : "block" });
       floatingCart.animate({ opacity : "1" });
@@ -85,7 +87,19 @@
 
 
   /**
-   *
-   *
+   *  Bloqueando la rotacion de la pantalla
    **/
+
+   $(window).bind('orientationchange resize', function(event){
+     if (event.orientation) {
+       if (event.orientation == 'landscape') {
+         if (window.rotation == 90) {
+           rotate(this, -90);
+         } else {
+           rotate(this, 90);
+         }
+       }
+     }
+   });
+
 </script>

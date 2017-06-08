@@ -9,6 +9,7 @@
 
   {{-- Estilos de la pagina --}}
   <link rel="stylesheet" href="{{ asset('css/mainweb.css') }}">
+  <link rel="stylesheet" href="{{ asset('css/mainweb-600px-landscape.css') }}">
   <link rel="stylesheet" href="{{ asset('css/mainweb-600px.css') }}">
   <link rel="stylesheet" href="{{ asset('css/mainweb-990px.css') }}">
   <link rel="stylesheet" href="{{ asset('css/animations.css') }}">
