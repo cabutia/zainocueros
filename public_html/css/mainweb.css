@@ -308,6 +308,11 @@
   opacity: 1;
 }
 
+.product-in-landing:hover > .product-extension > p > .go-to-product
+{
+  left: 10px;
+}
+
 .product-in-landing p
 {
   opacity: 0;
@@ -318,5 +323,14 @@
   font-weight: bold;
   font-family: 'raleway';
   text-transform: uppercase;
-  transition: all 1s ease-in-out;
+  transition: all .5s ease-in-out;
+  font-size: 10pt;
+}
+
+.go-to-product
+{
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  z-index: 1;
 }
