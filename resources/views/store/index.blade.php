@@ -17,4 +17,19 @@
   <!-- Product landing -->
   @include('store.product-landing')
 
+  <div class="row">
+    <div class="col s12">
+      
+      <!-- Search filters -->
+      @include('store.search-filters-s2')
+
+      <!-- Product listing -->
+      @include('store.product-listing')
+    </div>
+  </div>
+
+@endsection
+
+@section('pageScripts')
+  @include('store.pageScripts')
 @endsection

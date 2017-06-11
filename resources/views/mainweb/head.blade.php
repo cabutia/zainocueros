@@ -5,6 +5,8 @@
   {{-- CDN & scripts --}}
   <link href="https://fonts.googleapis.com/css?family=Raleway:100,600" rel="stylesheet" type="text/css">
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+  {{-- Framework --}}
   {!! MaterializeCSS::include_full() !!}
 
   {{-- Estilos de la pagina --}}
@@ -22,5 +24,5 @@
   {{-- Meta tags --}}
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content=" initial-scale=1, user-scalable=none">
+  <meta name="viewport" content=" initial-scale=1, user-scalable=0">
 </head>

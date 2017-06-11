@@ -15,4 +15,9 @@
   {
     height: 50vh;
   }
+  
+  .collection-item.desc
+  {
+    display: flex;
+  }
 }

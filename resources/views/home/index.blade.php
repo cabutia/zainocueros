@@ -44,3 +44,7 @@
   @include('home.fourBox')
 
 @endsection
+
+@section('pageScripts')
+  @include('home.pageScripts')
+@endsection

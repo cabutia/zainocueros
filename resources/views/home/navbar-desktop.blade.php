@@ -1,10 +1,10 @@
 <nav class="big-nav hide-on-med-and-down" id="desktop-nav">
   <ul class="left">
-    <li class="waves-effect waves-red flow-text"><a href="#">Inicio
+    <li class="waves-effect waves-red flow-text"><a href="{{ route('home') }}">Inicio
     </a></li>
-    <li class="waves-effect waves-red flow-text"><a href="#">Quienes somos
+    <li class="waves-effect waves-red flow-text"><a href="#">Servicios
     </a></li>
-    <li class="waves-effect waves-red flow-text"><a href="{{ route('products') }}">Productos
+    <li class="waves-effect waves-red flow-text"><a href="{{ route('products') }}">Catalogo online
     </a></li>
     <li class="waves-effect waves-red flow-text"><a href="#">Contacto
     </a></li>

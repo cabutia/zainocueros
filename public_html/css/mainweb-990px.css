@@ -7,4 +7,14 @@
     border-radius: 50px;
     width: auto;
   }
+
+  .col.prod-c
+  {
+    padding: 10px !important;
+  }
+
+  .collection-item.desc
+  {
+    display: flex;
+  }
 }

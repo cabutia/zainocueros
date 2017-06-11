@@ -1,8 +1,10 @@
 <!DOCTYPE html>
 <html>
   @include('mainweb.head')
-  <body style="height: 4000px">
+  <body>
     @yield('content')
-    @include('mainweb.pageScripts')
+    @include('mainweb.footer')
+    @include('mainweb.generalPageScripts')
+    @yield('pageScripts')
   </body>
 </html>
