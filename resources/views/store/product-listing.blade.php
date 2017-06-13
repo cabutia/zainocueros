@@ -1,5 +1,5 @@
 <div class="col s12 m9">
-  <div class="col s6 m4 relative prod-c no-padding">
+  <div class="col s6 m4 relative prod-c">
     <div class="card product-card">
       <a href="#">
         <div class="details-wrapper valign-wrapper">

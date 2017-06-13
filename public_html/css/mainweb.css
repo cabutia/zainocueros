@@ -152,6 +152,11 @@
   border-radius: 100px;
 }
 
+.border-btn:hover{
+  background: #179fd9;
+  color: #f0f0f0;
+}
+
 .shopping-badge
 {
   background: red;

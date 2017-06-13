@@ -1,9 +1,15 @@
 <!DOCTYPE html>
 <html>
   @include('mainweb.head')
-  <body>
+  @if (!isset($bodyColor))
+    <body>
+  @else
+    <body class="{{ $bodyColor }}">
+  @endif
     @yield('content')
-    @include('mainweb.footer')
+    @if (!isset($noFooter))
+      @include('mainweb.footer')
+    @endif
     @include('mainweb.generalPageScripts')
     @yield('pageScripts')
   </body>

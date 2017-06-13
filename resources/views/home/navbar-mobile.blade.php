@@ -16,11 +16,16 @@
     <li><a href="#"><i class="material-icons">shopping_cart</i>Carrito
       <span class="deep-orange badge new right" data-badge-caption="">0</span>
     </a></li>
-    <div class="divider"></div>
 
+    <div class="divider"></div>
     <div class="col s12 center">
-      <button type="button" class="center btn border-btn z-depth-0">Iniciar sesión</button>
-      <button type="button" class="center btn border-btn z-depth-0">Registrate</button>
+      @if (Auth::check())
+        <a href="#">Bienvenido <b>{{ Auth::user()->name }}</b></a>
+        <a href="{{ route('logout') }}"><button type="button" class="center btn border-btn z-depth-0">Cerrar sesión</button></a>
+      @else
+        <a href="{{ route('login') }}"><button type="button" class="center btn border-btn z-depth-0">Iniciar sesión</button></a>
+        <a href="{{ route('register') }}"><button type="button" class="center btn border-btn z-depth-0">Registrate</button></a>
+      @endif
     </div>
   </ul>
 </nav>

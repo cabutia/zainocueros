@@ -19,9 +19,9 @@
 
   <div class="row">
     <div class="col s12">
-      
+
       <!-- Search filters -->
-      @include('store.search-filters-s2')
+      @include('store.search-filters')
 
       <!-- Product listing -->
       @include('store.product-listing')

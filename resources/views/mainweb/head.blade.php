@@ -14,9 +14,9 @@
   <link rel="stylesheet" href="{{ asset('css/mainweb-600px-landscape.css') }}">
   <link rel="stylesheet" href="{{ asset('css/mainweb-600px.css') }}">
   <link rel="stylesheet" href="{{ asset('css/mainweb-990px.css') }}">
+  <link rel="stylesheet" href="{{ asset('css/croppie.css') }}">
   <link rel="stylesheet" href="{{ asset('css/animations.css') }}">
   <link rel="stylesheet" href="{{ asset('fonts/stylesheet.css') }}">
-
 
   {{-- Estilos que modifican MaterializeCSS --}}
   <link rel="stylesheet" href="{{ asset('css/materialize-modify.css') }}">
@@ -25,4 +25,7 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content=" initial-scale=1, user-scalable=0">
+
+  {{-- Scripts --}}
+  <script src="{{ asset('js/croppie.min.js') }}"></script>
 </head>

@@ -12,9 +12,16 @@
     </a></li>
   </ul>
   <ul class="right">
-    <li class="waves-effect waves-red flow-text"><a href="#">Registate
-    </a></li>
-    <li class="waves-effect waves-red flow-text"><a href="#">Iniciar sesión
-    </a></li>
+    @if(Auth::check())
+      <li class="waves-effect waves-red flow-text"><a href="#"><b>{{ Auth::user()->name }}</b>
+      </a></li>
+      <li class="waves-effect waves-red flow-text"><a href="{{ route('logout') }}">Cerrar sesión
+      </a></li>
+    @else
+      <li class="waves-effect waves-red flow-text"><a href="{{ route('register') }}">Registrate
+      </a></li>
+      <li class="waves-effect waves-red flow-text"><a href="{{ route('login') }}">Iniciar sesión
+      </a></li>
+    @endif
   </ul>
 </nav>

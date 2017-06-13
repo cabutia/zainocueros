@@ -12,7 +12,11 @@
     </div>
 
     <!-- Shopping fixed -->
-    <a class="cs-absolute-shopping z-depth-4 waves-effect waves-light hoverable" href="#">
+    @if (Auth::guest())
+      <a class="cs-absolute-shopping z-depth-4 waves-effect waves-light hoverable" href="{{ route('register') }}">
+    @else
+      <a class="cs-absolute-shopping z-depth-4 waves-effect waves-light hoverable" href="#">
+    @endif
       <div class="left-button">
         <i class="material-icons">shopping_cart</i>
       </div>
