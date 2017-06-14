@@ -455,39 +455,7 @@ ul.sitemap-list li
   float: left;
 }
 
-.admin-options-desktop .admin-delete-item
-{
-  float: right;
-  background: #f0f0f0;
-  color: #444;
-  width: 100%;
-  padding: 3px 10px;
-  text-align: center;
-  margin-bottom: 2px;
-  border: 1px solid #ccc;
-}
-
-.admin-options-desktop .admin-edit-item
-{
-  float: right;
-  background: #f0f0f0;
-  color: #444;
-  width: 100%;
-  padding: 3px 10px;
-  text-align: center;
-  margin-bottom: 2px;
-  border: 1px solid #ccc;
-}
-
-.admin-options-mobile
-{
-  position: absolute;
-  top: -10px;
-  left: 0;
-  z-index: 100;
-}
-
-.admin-options-mobile .admin-delete-item, .admin-options-mobile .admin-edit-item
+.admin-options-desktop .admin-delete-item, .admin-options-desktop .admin-edit-item
 {
   float: right;
   background: #f0f0f0;

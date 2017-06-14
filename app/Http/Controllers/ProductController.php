@@ -10,12 +10,6 @@ use Illuminate\Support\Facades\Storage;
 class ProductController extends Controller
 {
 
-    public function show($id, $slug)
-    {
-      $product = Product::find($id);
-      return dump($product);
-    }
-
     public function store(Request $request)
     {
       # Validacion del formulario

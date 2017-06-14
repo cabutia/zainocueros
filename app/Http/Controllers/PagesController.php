@@ -13,17 +13,13 @@ class PagesController extends Controller
 
     public function products(){
       $backgrounds = [
-        '71,201,133',
-        '71,133,201',
-        '201,71,133',
-        '201,133,71',
-        '133,71,201',
-        '133,201,71'
+        #  Soft  #
+        "71,150,201", "71,201,150", "150,71,201", "150,201,71", "201,150,71", "201,71,150",
+        #  Strong  #
+        # "20,100,230", "20,230,100", "230,100,20", "230,20,100", "100,20,230", "100,230,100",
       ];
       $products = Product::where('published', '1')->get();
-      foreach ($products as $product) {
-        $product->background = $backgrounds[rand(0,count($backgrounds) - 1)];
-      }
+      foreach ($products as $product) { $product->background = $backgrounds[rand(0,count($backgrounds) - 1)]; }
       return view('store.index')->with('products', $products);
     }
 
@@ -48,6 +44,11 @@ class PagesController extends Controller
     }
 
     public function product_edit($id){
-      return dump($id );
+      return dump($id);
+    }
+
+    public function show_product($id){
+      $product = Product::find($id);
+      return view('store.view-product')->with('product', $product);
     }
 }

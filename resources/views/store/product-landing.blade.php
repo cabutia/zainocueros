@@ -13,7 +13,7 @@
     </div>
   </div>
 
-  <div class="col s12 m6 l3 product-in-landing forget-overflow no-padding relative lighten-1">
+  <div class="col s12 m6 l3 product-in-landing forget-overflow no-padding relative lighten-1 hide-on-small-only">
     <div class="product-extension">
       <span class="title flow-text">Lorem ipsum <b>dolor</b></span>
       <p>
@@ -27,7 +27,7 @@
   </div>
 
   <!-- General products -->
-  <div class="col s12 m6 l3 product-in-landing forget-overflow no-padding relative lighten-1">
+  <div class="col s12 m6 l3 product-in-landing forget-overflow no-padding relative lighten-1 hide-on-small-only">
     <div class="important-product">
       -25%
     </div>
@@ -43,5 +43,5 @@
     </div>
   </div>
 
-  
+
 </div>
