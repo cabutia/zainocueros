@@ -182,6 +182,7 @@ return [
          */
         Collective\Html\HtmlServiceProvider::class,
         Skydiver\LaravelMaterializeCSS\MaterializeCSSServiceProvider::class,
+        Vinkla\Hashids\HashidsServiceProvider::class,
 
     ],
 
@@ -237,6 +238,7 @@ return [
         'Form' => Collective\Html\FormFacade::class,
         'Html' => Collective\Html\HtmlFacade::class,
         'MaterializeCSS' => Skydiver\LaravelMaterializeCSS\MaterializeCSS::class,
+        'Hashids' => Vinkla\Hashids\Facades\Hashids::class,
 
     ],
 

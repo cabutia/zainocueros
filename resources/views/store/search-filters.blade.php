@@ -12,7 +12,7 @@
         @include('store.developer.dev-tools')
       @endif
 
-      @if (Auth::check() && Auth::user()->access > 0 || Auth::check() && Auth::user()->access == -1)
+      @if (Auth::check() && Auth::user()->access != 0)
         <!-- Admin tools -->
         @include('store.admin.admin-tools')
       @endif

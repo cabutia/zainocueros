@@ -1,117 +1,37 @@
 <div class="col s12 m9">
-  <div class="col s6 m4 relative prod-c">
-    <div class="card product-card">
-      <a href="#">
-        <div class="details-wrapper valign-wrapper">
-          <span class="valign flow-text">Ir a detalles</span>
-        </div>
-      </a>
-      <div class="card-image">
-        <img src="{{ asset('images/online-store/products/sample_001.jpg') }}" alt="">
-      </div>
-      <div class="card-content prod">
-        <ul class="collection">
-          <li class="collection-item">
-            <b>Lorem ipsum dolor</b>
-          </li>
-          <li class="collection-item desc">
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut.
-          </li>
-        </ul>
-      </div>
-    </div>
-  </div>
 
-  <div class="col s6 m4 relative prod-c">
-    <div class="card product-card">
-      <a href="#">
-        <div class="details-wrapper valign-wrapper">
-          <span class="valign flow-text">Ir a detalles</span>
-        </div>
-      </a>
-      <div class="card-image">
-        <img src="{{ asset('images/online-store/products/sample_002.jpg') }}" alt="">
-      </div>
-      <div class="card-content prod">
-        <ul class="collection">
-          <li class="collection-item">
-            <b>Lorem ipsum dolor</b>
-          </li>
-          <li class="collection-item desc">
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut.
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut.
-          </li>
-        </ul>
-      </div>
+  @if(count($products) == 0)
+    <div class="col s6 m4 prod-c">
+      <h4>No hay productos disponibles.</h4>
     </div>
-  </div>
+  @else
+    @foreach ($products as $product)
+      <div class="col s6 m4 relative prod-c">
+        @if (Auth::check() && Auth::user()->access != 0)
+          @include('store.admin.product-admin')
+        @endif
+        <div class="card product-card">
+          <a href="{{ route('product.details', ['id' => $product->id, 'slug' => $product->slug]) }}">
+            <div class="details-wrapper valign-wrapper" style="background: rgba({{ $product->background }},.71);">
+              <span class="valign flow-text">Ir a detalles</span>
+            </div>
+          </a>
+          <div class="card-image">
+            <img src="{{ asset($product->item_image) }}" alt="{{ $product->item_title }}">
+          </div>
+          <div class="card-content prod">
+            <ul class="collection">
+              <li class="collection-item">
+                <b>{{ $product->item_title }}</b>
+              </li>
+              <li class="collection-item desc">
+                {{ $product->item_desc }}
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    @endforeach
+  @endif
 
-  <div class="col s6 m4 relative prod-c">
-    <div class="card product-card">
-      <a href="#">
-        <div class="details-wrapper valign-wrapper">
-          <span class="valign flow-text">Ir a detalles</span>
-        </div>
-      </a>
-      <div class="card-image">
-        <img src="{{ asset('images/online-store/products/sample_003.jpg') }}" alt="">
-      </div>
-      <div class="card-content prod">
-        <ul class="collection">
-          <li class="collection-item">
-            <b>Lorem ipsum dolor</b>
-          </li>
-          <li class="collection-item desc">
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut.
-          </li>
-        </ul>
-      </div>
-    </div>
-  </div>
-
-  <div class="col s6 m4 relative prod-c">
-    <div class="card product-card">
-      <a href="#">
-        <div class="details-wrapper valign-wrapper">
-          <span class="valign flow-text">Ir a detalles</span>
-        </div>
-      </a>
-      <div class="card-image">
-        <img src="{{ asset('images/online-store/products/sample_004.jpg') }}" alt="">
-      </div>
-      <div class="card-content prod">
-        <ul class="collection">
-          <li class="collection-item">
-            <b>Lorem ipsum dolor</b>
-          </li>
-          <li class="collection-item desc">
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut.
-          </li>
-        </ul>
-      </div>
-    </div>
-  </div>
-
-  <div class="col s6 m4 relative prod-c">
-    <div class="card product-card">
-      <a href="#">
-        <div class="details-wrapper valign-wrapper">
-          <span class="valign flow-text">Ir a detalles</span>
-        </div>
-      </a>
-      <div class="card-image">
-        <img src="{{ asset('images/online-store/products/sample_005.jpg') }}" alt="">
-      </div>
-      <div class="card-content prod">
-        <ul class="collection">
-          <li class="collection-item">
-            <b>Lorem ipsum dolor</b>
-          </li>
-          <li class="collection-item desc">
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut.
-          </li>
-        </ul>
-      </div>
-    </div>
-  </div>
 </div>

@@ -9,7 +9,8 @@
         "laravel/framework": "5.4.*",
         "laravel/tinker": "~1.0",
         "laravelcollective/html": "^5.4.0",
-        "skydiver/laravel-materialize-css": "dev-master"
+        "skydiver/laravel-materialize-css": "dev-master",
+        "vinkla/hashids": "^3.1"
     },
     "require-dev": {
         "fzaninotto/faker": "~1.4",

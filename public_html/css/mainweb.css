@@ -355,7 +355,6 @@
   position: absolute;
   width: 100%;
   height: 100%;
-  background: rgba(159, 50, 109, 0.71);
   z-index: 10;
   border-radius: 2px;
   top: 100%;
@@ -445,4 +444,57 @@ ul.sitemap-list li
   text-transform: uppercase;
   font-size: 8pt;
   letter-spacing: .06em;
+}
+
+.admin-options-desktop
+{
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: 100;
+  float: left;
+}
+
+.admin-options-desktop .admin-delete-item
+{
+  float: right;
+  background: #f0f0f0;
+  color: #444;
+  width: 100%;
+  padding: 3px 10px;
+  text-align: center;
+  margin-bottom: 2px;
+  border: 1px solid #ccc;
+}
+
+.admin-options-desktop .admin-edit-item
+{
+  float: right;
+  background: #f0f0f0;
+  color: #444;
+  width: 100%;
+  padding: 3px 10px;
+  text-align: center;
+  margin-bottom: 2px;
+  border: 1px solid #ccc;
+}
+
+.admin-options-mobile
+{
+  position: absolute;
+  top: -10px;
+  left: 0;
+  z-index: 100;
+}
+
+.admin-options-mobile .admin-delete-item, .admin-options-mobile .admin-edit-item
+{
+  float: right;
+  background: #f0f0f0;
+  color: #444;
+  width: 100%;
+  padding: 3px 10px;
+  text-align: center;
+  margin-bottom: 2px;
+  border: 1px solid #ccc;
 }

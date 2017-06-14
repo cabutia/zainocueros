@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use \App\Product;
 use Illuminate\Http\Request;
 
 class PagesController extends Controller
@@ -11,7 +12,19 @@ class PagesController extends Controller
     }
 
     public function products(){
-      return view('store.index');
+      $backgrounds = [
+        '71,201,133',
+        '71,133,201',
+        '201,71,133',
+        '201,133,71',
+        '133,71,201',
+        '133,201,71'
+      ];
+      $products = Product::where('published', '1')->get();
+      foreach ($products as $product) {
+        $product->background = $backgrounds[rand(0,count($backgrounds) - 1)];
+      }
+      return view('store.index')->with('products', $products);
     }
 
     public function register(){
@@ -32,5 +45,9 @@ class PagesController extends Controller
       return view('store.admin.upload-product')->with([
         "noFooter" => "true"
       ]);
+    }
+
+    public function product_edit($id){
+      return dump($id );
     }
 }
