@@ -10,4 +10,9 @@ class Product extends Model
     use SoftDeletes;
     protected $fillable = ["item_image", "item_title", "item_desc"];
     public $timestamps = true;
+
+    public function subcategory()
+    {
+      return $this->hasOne('\App\Subcategory', 'id', 'category_id');
+    }
 }

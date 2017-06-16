@@ -19,6 +19,8 @@ class LoginController extends Controller
       ];
       if(Auth::attempt($cred)){
         return redirect(route('home'))->withErrors('Bienvenido ' . Auth::User()->name . '!');
+      }else{
+        return redirect(route('login'))->withInput()->withErrors('Usuario y/o contraseña invalidos');
       }
     }
 

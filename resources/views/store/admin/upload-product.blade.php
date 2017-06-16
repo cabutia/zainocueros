@@ -18,20 +18,36 @@
       {{ Form::open(["route" => "do.itemupload", "enctype" => "multipart/form-data"]) }}
       <div class="file-field input-field">
         <div class="btn blue waves-effect waves-light">
-          <span>Imagen</span>
+          <span>Seleccionar</span>
           <input type="file" name="item_image" required>
         </div>
         <div class="file-path-wrapper">
-          <input type="text" class="file-path validate" required>
+          <input type="text" class="file-path validate">
         </div>
       </div>
       <div class="input-field">
-        <input type="text" name="item_title" id="item_title" required>
+        <input type="text" name="item_title" id="item_title" placeholder="Pantubotas de cuero" required>
         <label for="item_title">Nombre del producto</label>
       </div>
       <div class="input-field">
-        <textarea name="item_desc" id="item_desc" class="materialize-textarea" required></textarea>
+        <select name="category_id">
+          @foreach ($categories as $category)
+            <optgroup label="{{ $category->name }}">
+              @foreach ($category->subcategory as $subcat)
+                <option value="{{ $subcat->id }}">{{ $subcat->name }}</option>
+              @endforeach
+            </optgroup>
+          @endforeach
+        </select>
+        <label>Categoria</label>
+      </div>
+      <div class="input-field">
+        <textarea name="item_desc" id="item_desc" class="materialize-textarea" placeholder="Hermoso producto de cuero argentino" required></textarea>
         <label for="item_desc">Breve descripcion del producto</label>
+      </div>
+      <div class="input-field">
+        <input type="text" name="tags" id="tags" placeholder="Alfombra, roja, peluche, cuero, vaca" required>
+        <label for="tags">Etiquetas separadas por coma</label>
       </div>
       <button type="submit" class="btn blue right waves-effect waves-light">Cargar</button>
       {{ Form::close() }}

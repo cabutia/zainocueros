@@ -21,6 +21,7 @@ Route::get('/logout', 'LoginController@logout')->name('logout');
 Route::get('/item-upload', 'PagesController@item_upload')->name('itemupload');
 Route::post('/item-upload', 'ProductController@store')->name('do.itemupload');
 Route::post('/item-upload/done', 'ProductController@post_upload')->name('post.itemupload.edit');
-Route::get('/products/{id}/{slug}', 'PagesController@show_product')->name('product.details');
+Route::get('/products/{id}/{slug}', 'PagesController@product_show')->name('product.details');
 Route::post('/product/delete', 'ProductController@delete')->name('product.delete');
 Route::get('/product/{id}/edit', 'PagesController@product_edit')->name('product.edit');
+Route::post('/product/update', 'ProductController@update')->name('do.product.edit');
