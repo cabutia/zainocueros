@@ -25,3 +25,4 @@ Route::get('/products/{id}/{slug}', 'PagesController@product_show')->name('produ
 Route::post('/product/delete', 'ProductController@delete')->name('product.delete');
 Route::get('/product/{id}/edit', 'PagesController@product_edit')->name('product.edit');
 Route::post('/product/update', 'ProductController@update')->name('do.product.edit');
+Route::get('/product/category/{slug}', 'PagesController@cat_filtered_product_list')->name('product.list.categories');

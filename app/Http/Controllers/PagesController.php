@@ -45,8 +45,10 @@ class PagesController extends Controller
     }
 
     public function product_edit($id){
+      $categories = Category::all();
       $product = Product::find($id);
-      return view('store.edit-product')->with([
+      return view('store.admin.edit-product')->with([
+        'categories' => $categories,
         'product' => $product,
         'bodyColor' => 'grey lighten-3'
       ]);
@@ -60,5 +62,9 @@ class PagesController extends Controller
         'tags' => $tags,
         'bodyColor' => 'grey lighten-3'
       ]);
+    }
+
+    public function cat_filtered_product_list($slug){
+      return dump($slug);
     }
 }

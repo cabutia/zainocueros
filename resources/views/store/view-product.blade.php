@@ -36,7 +36,7 @@
           <div class="row">
             <div class="col s12">
               <h4 style="margin-bottom: 0">{{ $product->item_title }}</h4>
-              <a href="#">{{ $product->subcategory->name }}</a>
+              <a href="{{ route('product.list.categories', ['slug' => $product->subcategory->slug]) }}">{{ $product->subcategory->name }}</a>
             </div>
           </div>
 

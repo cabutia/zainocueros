@@ -67,6 +67,7 @@ class ProductController extends Controller
         $product = Product::find($r->id);
         $product->item_title = $r->get('item_title');
         $product->item_desc = $r->get('item_desc');
+        $product->category_id = $r->get('category_id');
         $product->tags = $r->get('tags');
 
         if($product->save()){

@@ -55,6 +55,24 @@
             </div>
           </div>
 
+          <!-- Categoria -->
+          <div class="row">
+            <div class="input-field col s12">
+              <i class="material-icons prefix grey-text text-lighten-1">grade</i>
+              <select name="category_id">
+                <option value="{{ $product->category_id }}" selected disabled>{{ $product->subcategory->name }}</option>
+                @foreach ($categories as $category)
+                  <optgroup label="{{ $category->name }}">
+                    @foreach ($category->subcategory as $subcat)
+                      <option value="{{ $subcat->id }}">{{ $subcat->name }}</option>
+                    @endforeach
+                  </optgroup>
+                @endforeach
+              </select>
+              <label>Categoria</label>
+            </div>
+          </div>
+
           <!-- Etiquetas -->
           <div class="row">
             <div class="input-field col s12">
