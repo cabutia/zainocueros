@@ -1,5 +1,8 @@
 <script type="text/javascript">
 
+   /* Inicializacion de componentes */
+
+
    $(document).scroll(function(){
      /* Mobile navbar */
      if($(this).scrollTop() > (header.innerHeight() - mobileNav.innerHeight()) && mobileNavTrans == 1){
@@ -39,5 +42,15 @@
    $(this).next($('.category-items')).toggle('fast');
   });
 
+  var mySwiper = new Swiper ('.swiper-container', {
+    // Optional parameters
+    direction: 'horizontal',
+    loop: true,
+    // And if we need scrollbar
+    // scrollbar: '.swiper-scrollbar',// If we need pagination
+    pagination: '.swiper-pagination',
+    nextButton: '.swiper-button-next',
+    prevButton: '.swiper-button-prev',
+  })
 
 </script>

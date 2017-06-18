@@ -52,3 +52,4 @@
    $('.materialboxed').materialbox();
 
 </script>
+<script src="{{ asset('js/swiper.min.js') }}"></script>

@@ -182,6 +182,7 @@ return [
          */
         Collective\Html\HtmlServiceProvider::class,
         Skydiver\LaravelMaterializeCSS\MaterializeCSSServiceProvider::class,
+        Approached\LaravelImageOptimizer\ServiceProvider::class,
 
     ],
 

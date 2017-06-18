@@ -15,6 +15,8 @@
     @if(Auth::check())
       <li class="waves-effect waves-red flow-text"><a href="#"><b>{{ Auth::user()->name }}</b>
       </a></li>
+      <li class="waves-effect waves-red flow-text"><a href="#">Favoritos
+      </a></li>
       <li class="waves-effect waves-red flow-text"><a href="{{ route('logout') }}">Cerrar sesión
       </a></li>
     @else

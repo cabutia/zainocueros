@@ -3,33 +3,44 @@
 namespace App\Http\Controllers;
 
 use \App\Product as Product;
+use \App\ProductImage as PImage;
 use Illuminate\Http\Request;
 use Illuminate\Http\UploadedFile;
 use Illuminate\Support\Facades\Storage;
+use Approached\LaravelImageOptimizer\ImageOptimizer;
 
 class ProductController extends Controller
 {
 
-    public function store(Request $request)
+    public function store(Request $request, ImageOptimizer $imageOptimizer)
     {
       # Validacion del formulario
       $this->validate($request, [
-        "item_image" => "required",
+        "images" => "required",
         "item_desc" => "required",
         "item_title" => "required",
         "category_id" => "required"
       ]);
 
-      $file = $request->file('item_image');
+      $files = $request->file('images');
       $item = new Product();
       $item->item_title = $request->get('item_title');
       $item->item_desc = $request->get('item_desc');
-      $item->item_image = $file->store('/images/online-store/products', 'local');
+      $item->image_id = uniqid();
       $item->category_id = $request->get('category_id');
       $item->slug = str_slug($request->get('item_title'), '-');
       $item->tags = $request->get('tags');
 
+      $iid = $item->image_id;
+
       if($item->save()){
+        foreach ($files as $imageFile) {
+          $imageOptimizer->optimizeUploadedImageFile($imageFile);
+          $newImage = PImage::create([
+            "path" => $imageFile->store('/images/online-store/products', 'local'),
+            "product_id" => $iid
+          ]);
+        }
         return view('store.admin.postupload')->with('item', $item);
       }else{
         return dump("Error");
@@ -40,26 +51,33 @@ class ProductController extends Controller
     {
       # Obteniendo datos del input y el producto
       $product = Product::find($data->item_id);
-      $oldImage = $product->item_image;
-      $imagedata = base64_decode($data->base64image);
-
-      # Si se puede guardar la imagen nueva
-      if(Storage::disk('local')->put($oldImage.'.png', $imagedata)){
-        # Se borra la imagen original
-        Storage::delete($oldImage);
-        # Se actualizan los datos del producto
-        $product->item_image = $oldImage.'.png';
-        $product->published = 1;
-        $product->save();
-        return redirect(route('products'))->withErrors('Agregado!');
-      }else{
-        return redirect(route('products'))->withErrors('Hubo un error al cargar el producto.');
+      $images = PImage::where('product_id', $product->image_id)->get();
+      foreach ($images as $id) {
+        $idimages[] = $id->id;
       }
-    }
-
-    public function edit($id)
-    {
-        //
+      for ($i=0; $i < count($data->input_image) ; $i++) {
+        if (Storage::delete($product->images[$i]->path)) {
+          if (Storage::disk('local')->put($product->images[$i]->path.'.png', base64_decode($data->input_image[$i]))) {
+            $pimage = PImage::find($idimages[$i]);
+            $pimage->update([ "path" => $product->images[$i]->path.'.png' ]);
+            $product->published = 1;
+            if ($product->save()) {
+              # Do nothing
+            }else{
+              # Si $product->save() falla
+              return redirect(route('products'))->withErrors('No se pudo actualizar la info. del producto.');
+            };
+          }else{
+            # Si Storage::put falla
+            return redirect(route('products'))->withErrors('No se pudieron guardar las imagenes.');
+          }
+        }else{
+          # Si Storage::delete falla
+          return redirect(route('products'))->withErrors('No se pudieron eliminar las imagenes.');
+        }
+      }
+      # Si el ciclo se completa correctamente
+      return redirect(route('products'))->withErrors('Agregado!');
     }
 
     public function update(Request $r)
@@ -92,9 +110,8 @@ class ProductController extends Controller
         }
     }
 
-    # Only admin
     public function destroy($id)
     {
-        //
+        # Only admin
     }
 }

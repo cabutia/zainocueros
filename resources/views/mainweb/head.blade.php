@@ -17,6 +17,7 @@
   <link rel="stylesheet" href="{{ asset('css/croppie.css') }}">
   <link rel="stylesheet" href="{{ asset('css/animations.css') }}">
   <link rel="stylesheet" href="{{ asset('fonts/stylesheet.css') }}">
+  <link rel="stylesheet" href="{{ asset('css/swiper.min.css') }}">
 
   {{-- Estilos que modifican MaterializeCSS --}}
   <link rel="stylesheet" href="{{ asset('css/materialize-modify.css') }}">

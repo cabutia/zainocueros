@@ -19,7 +19,7 @@
       <div class="file-field input-field">
         <div class="btn blue waves-effect waves-light">
           <span>Seleccionar</span>
-          <input type="file" name="item_image" required>
+          <input type="file" name="images[]" multiple required>
         </div>
         <div class="file-path-wrapper">
           <input type="text" class="file-path validate">

@@ -26,7 +26,7 @@
         </div>
 
         <div class="col s12 m6">
-          <img src="{{ asset($product->item_image) }}"
+          <img src="{{ asset($product->images[0]->path) }}"
                alt="{{ $product->tags }}"
                class="responsive-img materialboxed"
                style="width: 100% !important">
@@ -60,11 +60,10 @@
             <div class="input-field col s12">
               <i class="material-icons prefix grey-text text-lighten-1">grade</i>
               <select name="category_id">
-                <option value="{{ $product->category_id }}" selected disabled>{{ $product->subcategory->name }}</option>
                 @foreach ($categories as $category)
                   <optgroup label="{{ $category->name }}">
                     @foreach ($category->subcategory as $subcat)
-                      <option value="{{ $subcat->id }}">{{ $subcat->name }}</option>
+                      <option value="{{ $subcat->id }}" {{ ($product->category_id == $subcat->id) ? 'selected' : '' }}>{{ $subcat->name }}</option>
                     @endforeach
                   </optgroup>
                 @endforeach
