@@ -1,15 +1,10 @@
 <div class="row">
   <div class="swiper-container">
-    <div class="swiper-wrapper">
+    <div class="swiper-wrapper" style="background: url('{{ asset('images/header-background.jpg') }}'); background-size: cover;">
 
       <!-- Imagenes -->
       @foreach ($sliderproducts as $p)
-        <div class="swiper-slide"
-        style="background: url('{{ asset('images/header-background.jpg') }}');
-               position: relative;
-               background-size: cover;
-               padding-top: 5px;"
-        data-swiper-autoplay="1000">
+        <div class="swiper-slide" style="position: relative; padding-top: 5px;" data-swiper-autoplay="1000">
           <div class="absolute-info-top">
             {{ $p->item_title }}
           </div>
