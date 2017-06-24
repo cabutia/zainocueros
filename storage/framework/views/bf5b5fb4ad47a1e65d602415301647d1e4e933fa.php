@@ -48,7 +48,7 @@
     pagination: '.swiper-pagination',
     nextButton: '.swiper-button-next',
     prevButton: '.swiper-button-prev',
-    effect: 'fade'
+    effect: 'flip'
   });
 
   // $('.slider-resp-img').css({"height": this.innerWidth + "px"})

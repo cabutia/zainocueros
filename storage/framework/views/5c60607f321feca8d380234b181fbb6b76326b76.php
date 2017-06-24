@@ -1,15 +1,10 @@
 <div class="row">
   <div class="swiper-container">
-    <div class="swiper-wrapper">
+    <div class="swiper-wrapper" style="background: url('<?php echo e(asset('images/header-background.jpg')); ?>'); background-size: cover;">
 
       <!-- Imagenes -->
       <?php $__currentLoopData = $sliderproducts; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $p): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-        <div class="swiper-slide"
-        style="background: url('<?php echo e(asset('images/header-background.jpg')); ?>');
-               position: relative;
-               background-size: cover;
-               padding-top: 5px;"
-        data-swiper-autoplay="1000">
+        <div class="swiper-slide" style="position: relative; padding-top: 5px;" data-swiper-autoplay="1000">
           <div class="absolute-info-top">
             <?php echo e($p->item_title); ?>
 
