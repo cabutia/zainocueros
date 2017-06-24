@@ -1,5 +1,5 @@
 <div class="row">
-  <div class="swiper-container" style="background: url('{{ asset('images/header-background.jpg') }}'); background-size: cover;">
+  <div class="swiper-container" style="background: url('{{ asset('images/slider-background.jpg') }}'); background-size: cover;">
     <div class="swiper-wrapper">
 
       <!-- Imagenes -->
