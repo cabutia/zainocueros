@@ -47,7 +47,7 @@
     loop: true,
     pagination: '.swiper-pagination',
     nextButton: '.swiper-button-next',
-    prevButton: '.swiper-button-prev',
+    prevButton: '.swiper-button-prev'
   });
 
   // $('.slider-resp-img').css({"height": this.innerWidth + "px"})
