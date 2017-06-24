@@ -30,11 +30,11 @@
   <!-- Presentacion -->
   @include('home.who-we-are')
 
-  <!-- 4-box -->
-  @include('home.fourBox')
-
   <!-- Slider 5 prod -->
   @include('home.slider-5-prod')
+
+  <!-- 4-box -->
+  @include('home.fourBox')
 
   <!-- Contacto -->
   @include('home.contacto')

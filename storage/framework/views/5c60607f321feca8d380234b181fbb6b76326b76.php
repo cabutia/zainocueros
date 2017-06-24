@@ -1,5 +1,5 @@
-<div class="row">
-  <div class="swiper-container" style="background: url('<?php echo e(asset('images/header-background.jpg')); ?>'); background-size: cover;">
+<div class="row" style="margin-top: 100px">
+  <div class="swiper-container" style="background: url('<?php echo e(asset('images/slider-background.jpg')); ?>'); background-size: cover;">
     <div class="swiper-wrapper">
 
       <!-- Imagenes -->
