@@ -31,11 +31,11 @@
   <!-- Slider 5 prod -->
   <?php echo $__env->make('home.slider-5-prod', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
 
-  <!-- 4-box -->
-  <?php echo $__env->make('home.fourBox', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
-
   <!-- Contacto -->
   <?php echo $__env->make('home.contacto', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+
+  <!-- 4-box -->
+  <?php echo $__env->make('home.fourBox', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
 
 <?php $__env->stopSection(); ?>
 
