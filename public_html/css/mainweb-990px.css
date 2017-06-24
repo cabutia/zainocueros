@@ -17,4 +17,25 @@
   {
     display: flex;
   }
+
+  .slider-resp-img
+  {
+    margin-left: 30vw;
+    width: 40vw;
+  }
+
+  .absolute-info-top
+  {
+    top: 10px;
+    left: 25%;
+    width: auto;
+    text-align: right;
+    font-size: 24pt;
+    padding: 10px 20px;
+  }
+
+  .absolute-info-bottom-right
+  {
+    right: 25%;
+  }
 }

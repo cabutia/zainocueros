@@ -14,3 +14,13 @@
 .card .card-content.prod .collection .collection-item {
   padding: 5px 10px;
 }
+
+.card.small {
+  height: auto;
+}
+.card.small .card-content {
+  height: auto;
+}
+.card.small .card-action {
+  position: relative;
+}

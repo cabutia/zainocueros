@@ -18,7 +18,7 @@
     <div class="col s12">
 
       <!-- Search filters -->
-      @include('store.search-filters')
+      @include('store.cart-options')
 
       <!-- Products in cart -->
       @include('store.my-cart')

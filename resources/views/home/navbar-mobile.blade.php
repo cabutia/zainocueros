@@ -2,15 +2,11 @@
   <a href="#" data-activates="slide-out" class="button-collapse right"><i class="material-icons">menu</i></a>
   <a href="#" class="left"><img src="{{ asset('images/zaino-only-white-logo.png') }}" class="mobile-nav-logo"></a>
   <ul class="side-nav" id="slide-out">
-    <li><a href="{{ asset('home') }}"><i class="material-icons">airplay</i>Inicio
-    </a></li>
-    <li><a href="#"><i class="material-icons">supervisor_account</i>Servicios
+    <li><a href="{{ route('home') }}"><i class="material-icons">airplay</i>Inicio
     </a></li>
     <li><a href="{{ route('products') }}"><i class="material-icons">work</i>Catalogo online
     </a></li>
-    <li><a href="#"><i class="material-icons">contact_phone</i>Contacto
-    </a></li>
-    <li><a href="#"><i class="material-icons">person_pin</i>Social
+    <li><a href="{{ route('home') }}#contacto"><i class="material-icons">contact_phone</i>Contacto
     </a></li>
 
     <li><a href="#"><i class="material-icons">shopping_cart</i>Carrito

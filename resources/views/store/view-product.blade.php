@@ -120,9 +120,6 @@
     </div>
   </div>
 
-  <!-- Product landing -->
-  @include('store.product-landing')
-  
 @endsection
 
 @section('pageScripts')

@@ -33,6 +33,12 @@
   <!-- 4-box -->
   @include('home.fourBox')
 
+  <!-- Slider 5 prod -->
+  @include('home.slider-5-prod')
+
+  <!-- Contacto -->
+  @include('home.contacto')
+
 @endsection
 
 @section('pageScripts')

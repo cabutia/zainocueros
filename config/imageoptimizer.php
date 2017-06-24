@@ -13,30 +13,23 @@ return [
      */
     'options' => [
         'ignore_errors' => false,
-//
-//        'optipng_bin' => '/usr/bin/optipng',
-//        'optipng_options' => ['-i0', '-o2', '-quiet'],
-//
+
+        # # Linux # #
+        // 'pngquant_bin'     => env('PNGQUANT', '/usr/bin/pngquant'),
+        // 'pngquant_options' => ['--force'],
+        // 'gifsicle_bin'     => env('GIFSICLE', '/usr/bin/gifsicle'),
+        // 'gifsicle_options' => ['-b', '-O5'],
+        // 'jpegoptim_bin'     => env('JPEGOPTIM', '/usr/bin/jpegoptim'),
+        # 'jpegoptim_options' => ['--strip-all'],
+
+        # # Windows # #
         'pngquant_bin'     => env('PNGQUANT', base_path().'/public_html/plugins/pngquant.exe'),
         'pngquant_options' => ['--force'],
-//
-//        'pngcrush_bin' => '/usr/bin/pngcrush',
-//        'pngcrush_options' => ['-reduce', '-q', '-ow'],
-//
-//        'pngout_bin' => '/usr/bin/pngout',
-//        'pngout_options' => ['-s3', '-q', '-y'],
-//
         'gifsicle_bin'     => env('GIFSICLE', base_path().'/public_html/plugins/gifsicle.exe'),
         'gifsicle_options' => ['-b', '-O5'],
-
         'jpegoptim_bin'     => env('JPEGOPTIM', base_path().'/public_html/plugins/jpegoptim.exe'),
         'jpegoptim_options' => ['--strip-all'],
-//
-//        'jpegtran_bin' => '/usr/bin/jpegtran',
-//        'jpegtran_options' => ['-optimize', '-progressive'],
-//
-//        'advpng_bin' => '/usr/bin/advpng',
-//        'advpng_options' => ['-z', '-4', '-q'],
+        # #
     ],
 
 

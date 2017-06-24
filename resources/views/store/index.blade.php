@@ -19,7 +19,7 @@
 
   <div class="row">
     <div class="col s12">
-
+      
       <!-- Search filters -->
       @include('store.search-filters')
 

@@ -14,6 +14,7 @@ class RegisterController extends Controller
       $this->validate($r,[
         'name' => 'required',
         'email' => 'required',
+        'phone' => 'required',
         'password' => 'required',
         'password_confirm' => 'same:password'
       ]);

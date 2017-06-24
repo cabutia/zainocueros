@@ -16,14 +16,11 @@
 
       <!-- Logo -->
       <div class="col s12 m4 valign">
-        <div class="col s6 offset-s3">
-          <img src="{{ asset('images/zaino-logo.png') }}" alt="" class="responsive-img">
-        </div>
+        <img src="{{ asset('images/zaino-logo.png') }}" alt="" class="responsive-img">
       </div>
 
       <!-- Medios de pago -->
       <div class="col s12 m4">
-        <div class="col s6">
           <ul class="left sitemap-list">
             <li class="list-header">Medios de pago</li>
             <li>Paypal</li>
@@ -34,15 +31,12 @@
             <li>Visa</li>
             <li>American Express</li>
           </ul>
-        </div>
-        <div class="col s6">
           <ul class="left sitemap-list">
             <li class="list-header">Envios</li>
             <li>DHL</li>
             <li>FedEx</li>
             <li>OCA</li>
           </ul>
-        </div>
       </div>
     </div>
   </div>

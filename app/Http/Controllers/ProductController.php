@@ -6,6 +6,7 @@ use \App\Product as Product;
 use \App\ProductImage as PImage;
 use Illuminate\Http\Request;
 use Illuminate\Http\UploadedFile;
+use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Storage;
 use Approached\LaravelImageOptimizer\ImageOptimizer;
 
@@ -17,7 +18,7 @@ class ProductController extends Controller
       # Validacion del formulario
       $this->validate($request, [
         "images" => "required",
-        "item_desc" => "required",
+        // "item_desc" => "required",
         "item_title" => "required",
         "category_id" => "required"
       ]);
@@ -25,19 +26,23 @@ class ProductController extends Controller
       $files = $request->file('images');
       $item = new Product();
       $item->item_title = $request->get('item_title');
-      $item->item_desc = $request->get('item_desc');
+      // $item->item_desc = $request->get('item_desc');
+      $item->item_desc = "descripcion";
       $item->image_id = uniqid();
       $item->category_id = $request->get('category_id');
       $item->slug = str_slug($request->get('item_title'), '-');
-      $item->tags = $request->get('tags');
+      $item->tags = "etiquetas";
+      // $item->tags = $request->get('tags');
 
       $iid = $item->image_id;
 
       if($item->save()){
         foreach ($files as $imageFile) {
           $imageOptimizer->optimizeUploadedImageFile($imageFile);
+          $imageid=uniqid().'.jpeg';
+          Storage::put('/images/online-store/products/'.$imageid, File::get($imageFile));
           $newImage = PImage::create([
-            "path" => $imageFile->store('/images/online-store/products', 'local'),
+            "path" => '/images/online-store/products/'.$imageid,
             "product_id" => $iid
           ]);
         }
@@ -77,7 +82,8 @@ class ProductController extends Controller
         }
       }
       # Si el ciclo se completa correctamente
-      return redirect(route('products'))->withErrors('Agregado!');
+      // return redirect(route('products'))->withErrors('Agregado!');
+      return redirect(route('itemupload'))->withErrors('Agregado!');
     }
 
     public function update(Request $r)

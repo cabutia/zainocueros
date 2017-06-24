@@ -17,27 +17,27 @@
             <div class="col s12">
               <div class="input-field">
                 <i class="material-icons prefix">account_circle</i>
-                <input type="text" name="name" id="name">
+                <input type="text" name="name" id="name" required>
                 <label for="name">Nombre y apellido</label>
               </div>
               <div class="input-field">
                 <i class="material-icons prefix">phone</i>
-                <input type="text" name="phone" id="phone">
+                <input type="text" name="phone" id="phone" required>
                 <label for="phone">Telefono de contacto</label>
               </div>
               <div class="input-field">
                 <i class="material-icons prefix">email</i>
-                <input type="email" name="email" id="email">
+                <input type="email" name="email" id="email" required>
                 <label for="email">Email</label>
               </div>
               <div class="input-field">
                 <i class="material-icons prefix">lock</i>
-                <input type="password" name="password" id="password">
+                <input type="password" name="password" id="password" required>
                 <label for="password">Contraseña</label>
               </div>
               <div class="input-field">
                 <i class="material-icons prefix"></i>
-                <input type="password" name="password_confirm" id="password_confirm">
+                <input type="password" name="password_confirm" id="password_confirm" required>
                 <label for="password_confirm">Confirmar contraseña</label>
               </div>
             </div>

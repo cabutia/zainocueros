@@ -13,7 +13,7 @@
   $(document).ready(function(){
     setTimeout(function(){
       $('.collection-header').next($('.category-items')).toggle('fast');
-      $('.collection-header').children('span').html('+');
+      // $('.collection-header').children('span').html('+');
     }, 500)
   });
 
@@ -36,7 +36,7 @@
       floatingCart.animate({ opacity : "1" });
       floatingCartTrans = 0;
     }else if($(this).scrollTop() == 0 && floatingCartTrans == 0){
-      floatingCart.animate({ opacity : "0" }, function(){floatingCart.css({ "display" : "none" })});
+      floatingCart.animate({ opacity : "1" }, function(){floatingCart.css({ "display" : "block" })});
       floatingCartTrans = 1;
     }
   });

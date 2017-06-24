@@ -6,13 +6,15 @@ use Auth;
 use \App\Product;
 use \App\Category;
 use \App\Subcategory;
+use \App\CartRequest;
 use \App\ShoppingCart;
 use Illuminate\Http\Request;
 
 class PagesController extends Controller
 {
     public function home(){
-      return view('home.index');
+      $sliderProducts = Product::take(5)->get();
+      return view('home.index')->with('sliderproducts', $sliderProducts);
     }
 
     public function products(){
@@ -20,10 +22,10 @@ class PagesController extends Controller
         "71,150,201", "71,201,150", "150,71,201", "150,201,71", "201,150,71", "201,71,150",
         # "20,100,230", "20,230,100", "230,100,20", "230,20,100", "100,20,230", "100,230,100",
       ];
-      $products = Product::where('published', '1')->get();
+      $products = Product::where('published', '1')->inRandomOrder()->get()->take(27);
       $categories = Category::all();
       foreach ($products as $product) { $product->background = $backgrounds[rand(0,count($backgrounds) - 1)]; }
-      return view('store.index')->with(['products' => $products->sortByDesc('id'), 'categories' => $categories]);
+      return view('store.index')->with(['products' => $products, 'categories' => $categories]);
     }
 
     public function register(){
@@ -52,7 +54,7 @@ class PagesController extends Controller
       $products = Product::all();
       $product = Product::find($id);
       return view('store.admin.edit-product')->with([
-        'products' => $products->sortByAsc('id'),
+        'products' => $products,
         'categories' => $categories,
         'product' => $product,
         'bodyColor' => 'grey lighten-3'
@@ -86,12 +88,31 @@ class PagesController extends Controller
     public function shopping_cart(){
       $categories = Category::all();
       $cart = ShoppingCart::where('user_id', Auth::user()->id)->get();
-
-      foreach ($cart as $cartProd) { $products[] = Product::find($cartProd->product_id); }
-      return view('store.shopping-cart')->with([
-        'cart' => $cart,
-        'products' => $products,
-        'categories' => $categories
-      ]);
+      if(Auth::check() && Auth::user()->access != 0){
+        $requests = CartRequest::all();
+      }else{
+        $requests = CartRequest::where('user_id', Auth::user()->id)->get();
+      }
+      if(count($cart) != 0){
+        foreach ($cart as $cartProd) {
+          $products[] = Product::find($cartProd->product_id);
+        }
+        if (count($requests) == 0) {
+          $requests = [];
+        }
+        return view('store.shopping-cart')->with([
+          'cart' => $cart,
+          'products' => $products,
+          'categories' => $categories,
+          'requests' => $requests,
+        ]);
+      }else{
+        return view('store.shopping-cart')->with([
+          'cart' => $cart,
+          'products' => 0,
+          'categories' => $categories,
+          'requests' => $requests,
+        ]);
+      }
     }
 }

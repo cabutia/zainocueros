@@ -15,7 +15,7 @@
   <div class="row">
     <div class="col m4 offset-m4">
       <h4 style="margin-top: 70px; margin-bottom: 20px">Carga de productos</h4>
-      {{ Form::open(["route" => "do.itemupload", "enctype" => "multipart/form-data"]) }}
+      {{ Form::open(["route" => "do.itemupload", "enctype" => "multipart/form-data", "files" => true]) }}
       <div class="file-field input-field">
         <div class="btn blue waves-effect waves-light">
           <span>Seleccionar</span>
@@ -30,7 +30,7 @@
         <label for="item_title">Nombre del producto</label>
       </div>
       <div class="input-field">
-        <select name="category_id">
+        <select name="category_id" required>
           @foreach ($categories as $category)
             <optgroup label="{{ $category->name }}">
               @foreach ($category->subcategory as $subcat)
@@ -42,11 +42,11 @@
         <label>Categoria</label>
       </div>
       <div class="input-field">
-        <textarea name="item_desc" id="item_desc" class="materialize-textarea" placeholder="Hermoso producto de cuero argentino" required></textarea>
+        <textarea name="item_desc" id="item_desc" class="materialize-textarea" placeholder="Hermoso producto de cuero argentino"></textarea>
         <label for="item_desc">Breve descripcion del producto</label>
       </div>
       <div class="input-field">
-        <input type="text" name="tags" id="tags" placeholder="Alfombra, roja, peluche, cuero, vaca" required>
+        <input type="text" name="tags" id="tags" placeholder="Alfombra, roja, peluche, cuero, vaca">
         <label for="tags">Etiquetas separadas por coma</label>
       </div>
       <button type="submit" class="btn blue right waves-effect waves-light">Cargar</button>

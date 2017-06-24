@@ -58,3 +58,6 @@ Route::get('/product/{category}/{subcat}', 'PagesController@cat_filtered_product
 Route::get('/shopping-cart', 'PagesController@shopping_cart')->name('show.shopping_cart');
 Route::post('/shopping-cart/add', 'ShoppingController@add_to_cart')->name('add_to_cart');
 Route::post('/shopping-cart/delete', 'ShoppingController@delete')->name('delete_item_from_cart');
+Route::post('/shopping-cart/sendrequest', 'ShoppingController@send_request')->name('send_cart_request');
+Route::get('/shopping-cart/{id}/details/{user_id}', 'ShoppingController@cart_request_details')->name('cart_request_details');
+Route::post('/shopping-cart/setasread', 'ShoppingController@set_request_as_read')->name('set_request_as_read');

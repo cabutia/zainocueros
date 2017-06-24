@@ -6,6 +6,7 @@
   @else
     <body class="{{ $bodyColor }}">
   @endif
+    @include('mainweb.socialmedia')
     @yield('content')
     @if (!isset($noFooter))
       @include('mainweb.footer')

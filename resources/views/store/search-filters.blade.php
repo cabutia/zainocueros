@@ -1,7 +1,4 @@
-  <!-- Acomodar -->
-
-  <!-- Acomodar -->
-
+<!-- Filtros de busqueda -->
 <div class="col s12 m3">
   <div class="row">
 

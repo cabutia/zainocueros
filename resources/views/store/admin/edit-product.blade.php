@@ -14,9 +14,6 @@
 
   </header>
 
-  <!-- Product landing -->
-  @include('store.product-landing')
-
   <div class="container">
     <div class="row">
 
@@ -26,10 +23,17 @@
         </div>
 
         <div class="col s12 m6">
-          <img src="{{ asset($product->images[0]->path) }}"
-               alt="{{ $product->tags }}"
-               class="responsive-img materialboxed"
-               style="width: 100% !important">
+          @if (count($product->images) == 0)
+            <img src="{{ asset($product->images->path) }}"
+                 alt="{{ $product->tags }}"
+                 class="responsive-img materialboxed"
+                 style="width: 100% !important">
+          @else
+            <img src="{{ asset($product->images[0]->path) }}"
+                 alt="{{ $product->tags }}"
+                 class="responsive-img materialboxed"
+                 style="width: 100% !important">
+          @endif
         </div>
         <div class="col s12 m6">
           <div class="hide-on-med-and-up" style="margin-top: 20px"></div>

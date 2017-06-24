@@ -60,7 +60,7 @@
           @endforeach
           setTimeout(function(){
             $('#imageEditForm').submit();
-          }, 12000);
+          }, 10000);
         });
       </script>
 
