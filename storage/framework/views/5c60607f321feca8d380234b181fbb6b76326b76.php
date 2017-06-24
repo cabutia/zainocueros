@@ -1,6 +1,6 @@
 <div class="row">
-  <div class="swiper-container">
-    <div class="swiper-wrapper" style="background: url('<?php echo e(asset('images/header-background.jpg')); ?>'); background-size: cover;">
+  <div class="swiper-container" style="background: url('<?php echo e(asset('images/header-background.jpg')); ?>'); background-size: cover;">
+    <div class="swiper-wrapper">
 
       <!-- Imagenes -->
       <?php $__currentLoopData = $sliderproducts; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $p): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>

@@ -1,6 +1,6 @@
 <div class="row">
-  <div class="swiper-container">
-    <div class="swiper-wrapper" style="background: url('{{ asset('images/header-background.jpg') }}'); background-size: cover;">
+  <div class="swiper-container" style="background: url('{{ asset('images/header-background.jpg') }}'); background-size: cover;">
+    <div class="swiper-wrapper">
 
       <!-- Imagenes -->
       @foreach ($sliderproducts as $p)
